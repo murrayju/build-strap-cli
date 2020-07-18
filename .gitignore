@@ -1,0 +1,8 @@
+dist/
+download/
+node_modules/
+out/
+*.generated.*
+*.orig
+*.log
+latest.build.*
