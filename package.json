@@ -1,6 +1,6 @@
 {
   "name": "build-strap-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "CLI for build-strap",
   "license": "MIT",
   "authors": [
@@ -9,8 +9,8 @@
   "repository": "github:murrayju/build-strap-cli",
   "homepage": "https://github.com/murrayju/build-strap-cli",
   "buildStrap": {
-    "nodeVersion": "12.18.2",
-    "yarnVersion": "1.22.4",
+    "nodeVersion": "14.15.3",
+    "yarnVersion": "1.22.5",
     "repoType": "git",
     "copyright": "Justin Murray",
     "releaseBranch": "master",
