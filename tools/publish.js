@@ -24,6 +24,8 @@ export default async function doPublish() {
     await run(copy);
   }
   await publish({
+    distDir: './dist',
+    outDir: './out',
     doPublish: reallyPublish,
   });
 }
