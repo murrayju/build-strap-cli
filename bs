@@ -47,4 +47,4 @@
 }
 
 ./yarn install
-exec ./yarn run run "$@"
+exec ./yarn run target "$@"

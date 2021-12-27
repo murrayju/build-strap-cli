@@ -2,12 +2,12 @@
 downloadDir=`pwd`/download
 mkdir -p $downloadDir
 
+uname=`uname -s`
 if [ `getconf LONG_BIT` == "64" ]; then
 	arch=64
 else
 	arch=86
 fi
-uname=`uname -s`
 
 # we need jq to parse the package.json
 jqCmd=$(which jq 2>/dev/null || echo "$downloadDir/jq")
@@ -29,7 +29,11 @@ fi
 nodeVersion=$($jqCmd -r .buildStrap.nodeVersion package.json)
 yarnVersion=$($jqCmd -r .buildStrap.yarnVersion package.json)
 if [[ $uname =~ ^Darwin* ]]; then
-	nodeName=node-v$nodeVersion-darwin-x$arch
+  if [ `arch` == "arm64" ]; then
+    nodeName=node-v$nodeVersion-darwin-arm64
+  else
+    nodeName=node-v$nodeVersion-darwin-x$arch
+  fi
 elif [[ $uname =~ ^Linux* ]]; then
 	nodeName=node-v$nodeVersion-linux-x$arch
 else

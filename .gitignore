@@ -6,3 +6,4 @@ out/
 *.orig
 *.log
 latest.build.*
+yarn.lock

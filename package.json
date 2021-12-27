@@ -1,6 +1,6 @@
 {
   "name": "build-strap-cli",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "CLI for build-strap",
   "license": "MIT",
   "authors": [
@@ -9,8 +9,8 @@
   "repository": "github:murrayju/build-strap-cli",
   "homepage": "https://github.com/murrayju/build-strap-cli",
   "buildStrap": {
-    "nodeVersion": "14.17.2",
-    "yarnVersion": "1.22.5",
+    "nodeVersion": "16.13.1",
+    "yarnVersion": "1.22.17",
     "repoType": "git",
     "copyright": "Justin Murray",
     "releaseBranch": "master",
@@ -23,7 +23,7 @@
       "repository": "murrayju"
     }
   },
-  "main": "./tools/run",
+  "main": "./targets/run",
   "bin": {
     "bs": "./bs"
   },
@@ -64,7 +64,7 @@
     "prettier": "^2.3.2"
   },
   "scripts": {
-    "publish": "babel-node tools/run publish",
-    "run": "babel-node tools/run"
+    "publish": "babel-node targets/run publish",
+    "target": "babel-node targets/run"
   }
 }
