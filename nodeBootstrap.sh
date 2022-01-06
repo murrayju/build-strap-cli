@@ -29,7 +29,8 @@ fi
 nodeVersion=$($jqCmd -r .buildStrap.nodeVersion package.json)
 yarnVersion=$($jqCmd -r .buildStrap.yarnVersion package.json)
 if [[ $uname =~ ^Darwin* ]]; then
-  if [ `arch` == "arm64" ]; then
+  nodeVersionParts=(${nodeVersion//./ })
+  if [[ ${nodeVersionParts[0]} -ge 16 ]] && [ `arch` == "arm64" ]; then
     nodeName=node-v$nodeVersion-darwin-arm64
   else
     nodeName=node-v$nodeVersion-darwin-x$arch
