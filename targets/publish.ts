@@ -1,4 +1,3 @@
-// @flow
 import { run, publish, getVersion, buildLog } from 'build-strap';
 import copy from './copy';
 
