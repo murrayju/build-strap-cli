@@ -18,8 +18,8 @@ fi
 
 nodeVersion=$($jqCmd -r .buildStrap.nodeVersion package.json)
 yarnVersion=$($jqCmd -r .buildStrap.yarnVersion package.json)
+nodeVersionParts=(${nodeVersion//./ })
 if [[ $uname =~ ^Darwin* ]]; then
-  nodeVersionParts=(${nodeVersion//./ })
   if [[ ${nodeVersionParts[0]} -ge 16 ]] && [ "$(arch)" == "arm64" ]; then
     nodeName=node-v$nodeVersion-darwin-arm64
   else
@@ -68,7 +68,7 @@ if [ ! -f "$yarnDl" ]; then
 fi
 
 export PATH=$yarnDir/bin:$PATH
-yarnJs=$yarnDir/bin/yarn.js
+export yarnJs=$yarnDir/bin/yarn.js
 if [ ! -f "$yarnJs" ]; then
   echo Extracting yarn gz
   tar xzf "$yarnDl" -C "$nodeDir/node_modules/"
